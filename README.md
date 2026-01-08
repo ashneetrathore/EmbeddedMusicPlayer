@@ -37,7 +37,7 @@ The voltage regulator has three pins: input (Pin 1), ground (Pin 2), and output 
 4. Connect Pin 3 to the positive rail of the breadboard and Pin 2 to the negative rail to power one side of the breadboard.
 5. Join the two power rails on each side of the breadboard (positive together, negative together) to deliver voltage to both sides.
 
-### :eletric_plug: CONNECTING THE PROGRAMMER TO THE MICROCONTROLLER
+### :electric_plug: CONNECTING THE PROGRAMMER TO THE MICROCONTROLLER
 1. Connect the ATMEGA32 microcontroller to the breadboard securely.
 2. Connect the 6 programmer pins to the microcontroller as shown below:
     | Programmer Pin    | Microcontroller Pin |
