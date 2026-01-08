@@ -8,7 +8,7 @@ Based on assignment instructions from Prof. Amir Rahmani
 Embedded Music Player is an embedded systems project using an ATMega32 microcontroller. The system integrates a keypad, LCD, and speaker on a breadboard circuit to play predefined songs, display song titles, and respond to real-time user input. Using the keypad, users can start or stop songs, switch between songs, adjust pitch, and change tempo.
 
 ## :brain: FIRMWARE DESIGN
-The core software logic of the music player focuses on generating singular music notes at the microcontroller level and combining them to play complete songs. A `PlayingNote` struct represents a single note, storing its pitch and duration, and songs are encoded as arrays of these structs. The `play_song()` function iterates through each struct and calls `play_note`, which generates sound by toggling a GPIO output pin to produce a square-wave signal at the desired frequency for the specified duration.
+Run in **Microchip Studio**, the core software logic of the music player focuses on generating singular music notes at the microcontroller level and combining them to play complete songs. A `PlayingNote` struct represents a single note, storing its pitch and duration, and songs are encoded as arrays of these structs. The `play_song()` function iterates through each struct and calls `play_note`, which generates sound by toggling a GPIO output pin to produce a square-wave signal at the desired frequency for the specified duration.
 
 **Precise timing** is critical for accurate audio generation, so the program defines an `avr_wait_us()` function that provides fine-grained delay control in units of 8 microseconds, This high-resolution delay is necessary to accurately control the high and low periods (`th` and `tl`) of each waveform cycle, ensuring consistent pitch and tempo during playback.
 
@@ -25,9 +25,24 @@ EmbeddedMusicPlayer/
 └── .gitignore   # Excludes files and folders from version control
 ```
 
-## :gear: CIRCUIT SET UP GUIDE
-### :toolbox: REQUIRED HARDWARE
+## :: IMAGE OF CIRCUIT
+![Image of circuit](circuit_image.jpg)
 
+## :gear: CIRCUIT SCHEMATIC AND SET UP GUIDE
+![Circuit schematic](schematic.png)
+
+### :toolbox: REQUIRED HARDWARE
+- ATMega 32 Microcontroller
+- Breadboard (with solid core or jumper wires)
+- ATMEL-ICE Programmer
+- 9V Battery (with 9V battery connector)
+- LCD Display
+- 4 by 4 Keypad
+- Speaker
+- 5V Voltage Regulator
+- 2 0.1µF Capacitors
+- 8 MHz Crystal
+- 1K Resistor
 
 ### :battery: BUILDING THE POWER SUPPLY
 The voltage regulator has three pins: input (Pin 1), ground (Pin 2), and output (Pin 3). The circuit takes +9V as input and regulates it down to a +5V output, using the capacitor to smooth out the output voltage.
@@ -39,7 +54,7 @@ The voltage regulator has three pins: input (Pin 1), ground (Pin 2), and output 
 
 ### :electric_plug: CONNECTING THE PROGRAMMER TO THE MICROCONTROLLER
 1. Connect the ATMEGA32 microcontroller to the breadboard securely.
-2. Connect the 6 programmer pins to the microcontroller as shown below:
+2. Connect the six programmer pins to the microcontroller as shown below:
 
     | Programmer Pin    | Microcontroller Pin |
     |-------------------|---------------------|
@@ -100,9 +115,23 @@ The LCD has a total of 16 pins, including source pins that supply power to the d
     | DB7 (Pin 14)      | PD7 (Pin 21)        | 
 
 >[!NOTE]
-> LCD Pins 15 and 15 are unused for this project.
+> LCD Pins 15 and 16 are unused for this project.
 
 ### :loudspeaker: CONNECTING THE SPEAKER TO THE MICROCONTROLLER
 1. Connect the negative terminal of the speaker to the negative rail of the breadboard.
 2. Connect one leg of a capacitor to PB3 (Pin 4) on the microcontroller.
 3. Connect the other leg of a capacitor to the positive terminal of the speaker.
+
+## :point_up_2: KEYPAD CONTROLS
+| Key | Function                               |
+|-----|----------------------------------------|
+| *   | Start / stop song                      |
+| A   | Select *Twinkle Twinkle Little Star*   |
+| B   | Select *Mary Had a Little Lamb*        |
+| C   | Select *Birthday Song*                 |
+| 1   | Set frequency to 220 Hz (low pitch)    |
+| 2   | Set frequency to 440 Hz (normal pitch) |
+| 3   | Set frequency to 880 Hz (high pitch)   |
+| 4   | Set tempo to slow                      |
+| 5   | Set tempo to normal                    |
+| 6   | Set tempo to fast                      |
