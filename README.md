@@ -1,4 +1,4 @@
-# :loud_sound: EMBEDDED MUSIC PLAYER
+# :musical_score: EMBEDDED MUSIC PLAYER
 
 ## :open_book: OVERVIEW
 Date: May 2025\
@@ -40,6 +40,7 @@ The voltage regulator has three pins: input (Pin 1), ground (Pin 2), and output 
 ### :electric_plug: CONNECTING THE PROGRAMMER TO THE MICROCONTROLLER
 1. Connect the ATMEGA32 microcontroller to the breadboard securely.
 2. Connect the 6 programmer pins to the microcontroller as shown below:
+
     | Programmer Pin    | Microcontroller Pin |
     |-------------------|---------------------|
     | 1                 | PB6 (Pin 7)         |
@@ -61,6 +62,7 @@ The voltage regulator has three pins: input (Pin 1), ground (Pin 2), and output 
 
 ### :1234: CONNECTING THE KEYPAD TO THE MICROCONTROLLER
 1. Connect the 8 keypad pins to PORT C of the microcontroller as shown below:
+
     | Keypad Pin        | Microcontroller Pin |
     |-------------------|---------------------|
     | C0                | PC0 (Pin 22)        |
@@ -70,10 +72,35 @@ The voltage regulator has three pins: input (Pin 1), ground (Pin 2), and output 
     | R0                | PC7 (Pin 29)        |
     | R1                | PC6 (Pin 28)        | 
     | R2                | PC5 (Pin 27)        |
-    | R3                | PC4 (Pin ) 26       | 
+    | R3                | PC4 (Pin 26)        | 
 
 ### :framed_picture: CONNECTING THE LCD TO THE MICROCONTROLLER
+The LCD has a total of 16 pins, including source pins that supply power to the display, control pins that manage its operation, and data pins that carry the information displayed.
+1. To supply power to the LCD, connect VSS (LCD Pin 1) to the negative rail of the breadboard and VDD (LCD Pin 2) to the positive rail.
+2. Connect one leg of a 1k resistor to VO (LCD Pin 3) and the other leg to the negative rail of the breadboard.
+3. Connect the control pins of the LCD to PORT B of the microcontroller as shown below:
 
+    | LCD Pin           | Microcontroller Pin |
+    |-------------------|---------------------|
+    | RS (Pin 4)        | PB0 (Pin 1)         |
+    | R/W (Pin 5)       | PB1 (Pin 2)         |
+    | E (Pin 6)         | PB2 (Pin 3)         |
+
+4. Connect the data pins of the LCD to PORT D of the microcontroller as shown below:
+
+    | LCD Pin           | Microcontroller Pin |
+    |-------------------|---------------------|
+    | DB0 (Pin 7)       | PD0 (Pin 14)        |
+    | DB1 (Pin 8)       | PD1 (Pin 15)        |
+    | DB2 (Pin 9)       | PD2 (Pin 16)        | 
+    | DB3 (Pin 10)      | PD3 (Pin 17)        |
+    | DB4 (Pin 11)      | PD4 (Pin 18)        | 
+    | DB5 (Pin 12)      | PD5 (Pin 19)        |
+    | DB6 (Pin 13)      | PD6 (Pin 20)        |
+    | DB7 (Pin 14)      | PD7 (Pin 21)        | 
+
+>[!NOTE]
+> LCD Pins 15 and 15 are unused for this project.
 
 ### :loudspeaker: CONNECTING THE SPEAKER TO THE MICROCONTROLLER
 1. Connect the negative terminal of the speaker to the negative rail of the breadboard.
