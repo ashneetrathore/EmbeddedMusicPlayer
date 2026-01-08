@@ -17,12 +17,15 @@ User input is handled through **polling-based keypad scanning**, allowing the us
 ## :open_file_folder: PROJECT FILE STRUCTURE
 ```bash
 EmbeddedMusicPlayer/
-│── main.c       # Implements main program logic for the music player
-│── avr.h        # Defines AVR macros and timing utilities
-│── lcd.h        # Declares LCD control and display functions
-│── lcd.c        # Implements LCD control and display functions
-│── README.md    # Project documentation
-└── .gitignore   # Excludes files and folders from version control
+│── main.c                  # Implements main program logic for the music player
+│── avr.h                   # Defines AVR macros and timing utilities
+│── lcd.h                   # Declares LCD control and display functions
+│── lcd.c                   # Implements LCD control and display functions
+│── assets/               
+│   │── circuit_image.jpg   # Image of finished circuit
+│   └── schematic.png       # Schematic of circuit
+│── README.md               # Project documentation
+└── .gitignore              # Excludes files and folders from version control
 ```
 
 ## :gear: CIRCUIT SET UP GUIDE
