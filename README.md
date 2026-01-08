@@ -25,11 +25,9 @@ EmbeddedMusicPlayer/
 └── .gitignore   # Excludes files and folders from version control
 ```
 
-## :: IMAGE OF CIRCUIT
-![Image of circuit](circuit_image.jpg)
-
-## :gear: CIRCUIT SCHEMATIC AND SET UP GUIDE
-![Circuit schematic](schematic.png)
+## :gear: CIRCUIT SET UP GUIDE
+> [!NOTE]
+> View the circuit schematic and an image of the finished circuit in the [assets folder](assets/).
 
 ### :toolbox: REQUIRED HARDWARE
 - ATMega 32 Microcontroller
